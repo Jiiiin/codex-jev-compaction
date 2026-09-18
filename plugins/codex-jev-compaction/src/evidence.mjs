@@ -2,7 +2,7 @@ import {mkdir, lstat, readdir, unlink, writeFile} from 'node:fs/promises';
 import {randomUUID} from 'node:crypto';
 import {join, resolve} from 'node:path';
 import {readBounded} from './io.mjs';
-import {outputText, bytes} from './core.mjs';
+import {outputText, toolOutputText, bytes} from './core.mjs';
 
 export const EVIDENCE_TTL = 15 * 60 * 1000;
 export const EVIDENCE_MAX_BYTES = 20 * 1024 * 1024;
@@ -20,7 +20,7 @@ export async function saveEvidence(root, event, items, result) {
     if (file?.isFile() && Date.now() - file.mtimeMs > EVIDENCE_TTL) await unlink(path).catch(() => {});
   }
   const records = Object.fromEntries(result.decisions.filter(d => d.action !== 'drop').map(d => [d.id, {
-    tool: d.name, input: outputText(items[d.call].arguments ?? items[d.call].input ?? ''), output: items[d.result].output,
+    tool: d.name, input: outputText(items[d.call].arguments ?? items[d.call].input ?? ''), output: toolOutputText(items[d.result].output),
   }]));
   const data = {version: 1, session: event.session_id, cwd: resolve(event.cwd), createdAt: Date.now(), records};
   if (bytes(data) > EVIDENCE_MAX_BYTES) throw new Error('Evidence exceeds size limit');

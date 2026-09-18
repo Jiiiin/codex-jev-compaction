@@ -40,6 +40,38 @@ test('head-tail previews retain final errors and user corrections', () => {
   assert.match(JSON.stringify(state), /LATEST_USER_CORRECTION/);
   assert.ok(Buffer.byteLength(JSON.stringify(state)) <= 20000);
 });
+test('real code-mode text blocks survive scoring, snapshot pages and restoration', async t => {
+  const {env,event}=await setup(t);
+  const items=history();
+  for (const item of items) if (item.type==='function_call_output') {
+    item.type='custom_tool_call_output';
+    item.output=[{type:'input_text',text:'Script completed'}, {type:'input_text',text:item.output}];
+  } else if(item.type==='function_call') {
+    item.type='custom_tool_call';item.input='text(await tools.read_record({}))';delete item.arguments;
+  }
+  await writeFile(event.transcript_path,JSON.stringify(items));
+  let calls=0;
+  await runHook(event,env,{ask:async(s,q)=>{calls++;assert.match(JSON.stringify(s),/CRITICAL_OLD_EVIDENCE/);return fakeScores(s,q);}});
+  assert.ok(calls>0);
+  const output=await runHook({...event,hook_event_name:'SessionStart',source:'compact'},env);
+  assert.match(output.hookSpecificOutput.additionalContext,/Script completed/);
+  const {readEvidence}=await import('../src/evidence.mjs');
+  const files=await readdir(join(env.PLUGIN_DATA,'evidence'));
+  const page=await readEvidence(join(env.PLUGIN_DATA,'evidence',files[0]),'test_0',{cwd:event.cwd});
+  assert.match(page.text,/CRITICAL_OLD_EVIDENCE/);
+});
+test('text-only block exports retain pairing and format; mixed media is untouched', async () => {
+  const items=[message('Continue'),{type:'custom_tool_call',call_id:'c',name:'exec',input:'read()'},
+    {type:'custom_tool_call_output',call_id:'c',output:[{type:'input_text',text:'x'.repeat(600)}]}];
+  const original=structuredClone(items);
+  const result=await compact(items,async(_s,q)=>Object.fromEntries(Object.keys(q).map(k=>[k,{noul:k.startsWith('call_')?1:0}])),{recent:0});
+  assert.equal(result.items[2].output[0].type,'input_text');
+  assert.match(result.items[2].output[0].text,/truncated/);
+  assert.deepEqual(items,original);
+  items[2].output.push({type:'input_image',image_url:'not-for-upload'});
+  const preserved=await compact(items,async()=>{throw new Error('Mixed media must not be sent');},{recent:0});
+  assert.deepEqual(preserved.items,items);
+});
 test('120 tool calls with long logs score in bounded batches and concurrency', async () => {
   let active = 0, peak = 0, calls = 0;
   const items = history(120);

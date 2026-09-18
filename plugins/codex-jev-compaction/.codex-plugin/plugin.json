@@ -1,6 +1,6 @@
 {
   "name": "codex-jev-compaction",
-  "version": "0.1.0+codex.20260918063918",
+  "version": "0.1.0+codex.20260918065750",
   "description": "Jev-selected evidence checkpoints around Codex native compaction; includes a non-destructive transcript export CLI.",
   "author": {
     "name": "Jiiiin"

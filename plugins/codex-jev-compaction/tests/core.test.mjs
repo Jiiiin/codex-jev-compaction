@@ -71,6 +71,26 @@ test('multi-request batching retains all decisions and bounded request size', as
   const r=await compact(fixture,async(s,q)=>{count++; assert.ok(Buffer.byteLength(JSON.stringify({model:'jev-latest',state:s,questions:q}))<=size+900); return response(1)(s,q);},{recent:0,maxRequestBytes:size+900});
   assert.ok(count>1); assert.equal(r.decisions.length,5); assert.deepEqual(r.items,fixture);
 });
+test('scoring distinguishes complete output from a bounded preview', () => {
+  const items=[{type:'message',role:'user',content:[{type:'input_text',text:'Find the original receipt.'}]},
+    {type:'function_call',call_id:'a',name:'read',arguments:'{}'},
+    {type:'function_call_output',call_id:'a',output:'routine noise'},
+    {type:'function_call',call_id:'b',name:'read',arguments:'{}'},
+    {type:'function_call_output',call_id:'b',output:'x'.repeat(900)+'receipt=R91'+'x'.repeat(900)}];
+  const history=buildState(items,collectPairs(items,0)).history;
+  assert.equal(history.find(x=>x.id==='a').resultPreviewComplete,true);
+  assert.equal(history.find(x=>x.id==='b').resultPreviewComplete,false);
+  assert.ok(!history.find(x=>x.id==='b').resultPreview.includes('R91'));
+});
+test('low scores cannot discard unseen middle evidence', async () => {
+  const items=[{type:'message',role:'user',content:[{type:'input_text',text:'Recover the receipt.'}]},
+    {type:'function_call',call_id:'a',name:'read',arguments:'{}'},
+    {type:'function_call_output',call_id:'a',output:'x'.repeat(900)+'receipt=R91'+'x'.repeat(900)}];
+  const result=await compact(items,response(0),{recent:0});
+  assert.equal(result.decisions[0].reason,'partial-preview');
+  assert.equal(result.decisions[0].action,'keep');
+  assert.deepEqual(result.items,items);
+});
 test('HTTP client uses fixed endpoint, rejects redirects and does not echo error bodies', async () => {
   await assert.rejects(askJev({}, {}, {apiKey:'fake',fetchFn:async(url,opts)=>{
     assert.equal(url,'https://api.typesafe.ai/v1/systemone');assert.equal(opts.redirect,'error');
