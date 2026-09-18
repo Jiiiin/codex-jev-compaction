@@ -39,7 +39,7 @@ CLI 支持两种输入：
 ```sh
 # 在本机环境安全设置 TYPESAFE_API_KEY。不要写到仓库或命令截图中。
 mkdir -p artifacts
-node plugins/codex-jev-compaction/scripts/cli.mjs compact plugins/codex-jev-compaction/examples/session.json artifacts/selected.json --send-to-typesafe
+node scripts/cli.mjs compact examples/session.json artifacts/selected.json --send-to-typesafe
 ```
 
 `--send-to-typesafe` 明确表示允许把该文件的对话文本、工具输入和结果预览发送给 TypeSafe。输出文件必须不存在；程序不覆盖输入或已存在的文件。输出是本工具的 `{items, decisions, stats}` 报告，不是 Codex 可直接导入的会话。
