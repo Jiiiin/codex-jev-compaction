@@ -1,0 +1,2980 @@
+{
+  "live-evaluation-initial": {
+    "mode": "live Jev on bundled synthetic fixtures",
+    "cases": 9,
+    "restoredFacts": 6,
+    "factRecall": 0.6666666666666666,
+    "releaseReady": false,
+    "releaseNote": "This small retrieval suite is not a downstream Codex A/B quality evaluation. Full runtime and real-model gates remain required.",
+    "rows": [
+      {
+        "case": "mario-head",
+        "selectedCritical": true,
+        "restoredExactFact": true,
+        "evidenceChars": 5821,
+        "elapsedMs": 1084,
+        "requests": 1,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 3298,
+            "outputTokens": 148
+          }
+        ]
+      },
+      {
+        "case": "mario-tail",
+        "selectedCritical": true,
+        "restoredExactFact": true,
+        "evidenceChars": 5820,
+        "elapsedMs": 1238,
+        "requests": 1,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 3299,
+            "outputTokens": 148
+          }
+        ]
+      },
+      {
+        "case": "mario-middle",
+        "selectedCritical": true,
+        "restoredExactFact": false,
+        "evidenceChars": 5821,
+        "elapsedMs": 295,
+        "requests": 1,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 3286,
+            "outputTokens": 148
+          }
+        ]
+      },
+      {
+        "case": "ticket-head",
+        "selectedCritical": true,
+        "restoredExactFact": true,
+        "evidenceChars": 5826,
+        "elapsedMs": 320,
+        "requests": 1,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 3318,
+            "outputTokens": 148
+          }
+        ]
+      },
+      {
+        "case": "ticket-tail",
+        "selectedCritical": true,
+        "restoredExactFact": true,
+        "evidenceChars": 5825,
+        "elapsedMs": 289,
+        "requests": 1,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 3319,
+            "outputTokens": 148
+          }
+        ]
+      },
+      {
+        "case": "ticket-middle",
+        "selectedCritical": true,
+        "restoredExactFact": false,
+        "evidenceChars": 5826,
+        "elapsedMs": 304,
+        "requests": 1,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 3303,
+            "outputTokens": 148
+          }
+        ]
+      },
+      {
+        "case": "hotel-head",
+        "selectedCritical": true,
+        "restoredExactFact": true,
+        "evidenceChars": 5840,
+        "elapsedMs": 299,
+        "requests": 1,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 3306,
+            "outputTokens": 148
+          }
+        ]
+      },
+      {
+        "case": "hotel-tail",
+        "selectedCritical": true,
+        "restoredExactFact": true,
+        "evidenceChars": 5839,
+        "elapsedMs": 288,
+        "requests": 1,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 3308,
+            "outputTokens": 148
+          }
+        ]
+      },
+      {
+        "case": "hotel-middle",
+        "selectedCritical": true,
+        "restoredExactFact": false,
+        "evidenceChars": 5840,
+        "elapsedMs": 264,
+        "requests": 1,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 3296,
+            "outputTokens": 148
+          }
+        ]
+      }
+    ]
+  },
+  "live-holdout": {
+    "kind": "Initial calibration with opaque IDs; later used for prompt tuning",
+    "cases": 9,
+    "directFacts": 6,
+    "snapshotFacts": 9,
+    "goldSelectionRecall": 1,
+    "nonGoldOldRetention": 45,
+    "nonGoldOldTotal": 45,
+    "rows": [
+      {
+        "case": "mario-en-head",
+        "goldId": "r035",
+        "directFact": true,
+        "snapshotFact": true,
+        "snapshotPages": 2,
+        "elapsedMs": 1223,
+        "evidenceChars": 5848,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 2402,
+            "outputTokens": 220
+          }
+        ],
+        "decisions": [
+          {
+            "id": "r035",
+            "pinned": false,
+            "keepCall": 0.94,
+            "keepResult": 0.88,
+            "action": "keep"
+          },
+          {
+            "id": "r0fa",
+            "pinned": false,
+            "keepCall": 0.13,
+            "keepResult": 0.39,
+            "action": "keep"
+          },
+          {
+            "id": "r1bf",
+            "pinned": false,
+            "keepCall": 0.13,
+            "keepResult": 0.38,
+            "action": "keep"
+          },
+          {
+            "id": "r284",
+            "pinned": false,
+            "keepCall": 0.13,
+            "keepResult": 0.38,
+            "action": "keep"
+          },
+          {
+            "id": "r349",
+            "pinned": false,
+            "keepCall": 0.12,
+            "keepResult": 0.38,
+            "action": "keep"
+          },
+          {
+            "id": "r029",
+            "pinned": false,
+            "keepCall": 0.13,
+            "keepResult": 0.43,
+            "action": "keep"
+          },
+          {
+            "id": "r0ee",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r1b3",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r278",
+            "pinned": true,
+            "action": "keep"
+          }
+        ]
+      },
+      {
+        "case": "mario-en-tail",
+        "goldId": "r119",
+        "directFact": true,
+        "snapshotFact": true,
+        "snapshotPages": 2,
+        "elapsedMs": 434,
+        "evidenceChars": 5847,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 2406,
+            "outputTokens": 220
+          }
+        ],
+        "decisions": [
+          {
+            "id": "r054",
+            "pinned": false,
+            "keepCall": 0.16,
+            "keepResult": 0.48,
+            "action": "keep"
+          },
+          {
+            "id": "r119",
+            "pinned": false,
+            "keepCall": 0.93,
+            "keepResult": 0.85,
+            "action": "keep"
+          },
+          {
+            "id": "r1de",
+            "pinned": false,
+            "keepCall": 0.17,
+            "keepResult": 0.49,
+            "action": "keep"
+          },
+          {
+            "id": "r2a3",
+            "pinned": false,
+            "keepCall": 0.16,
+            "keepResult": 0.45,
+            "action": "keep"
+          },
+          {
+            "id": "r368",
+            "pinned": false,
+            "keepCall": 0.17,
+            "keepResult": 0.45,
+            "action": "keep"
+          },
+          {
+            "id": "r048",
+            "pinned": false,
+            "keepCall": 0.16,
+            "keepResult": 0.44,
+            "action": "keep"
+          },
+          {
+            "id": "r10d",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r1d2",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r297",
+            "pinned": true,
+            "action": "keep"
+          }
+        ]
+      },
+      {
+        "case": "mario-en-middle",
+        "goldId": "r1fd",
+        "directFact": false,
+        "snapshotFact": true,
+        "snapshotPages": 3,
+        "elapsedMs": 479,
+        "evidenceChars": 5848,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 2396,
+            "outputTokens": 220
+          }
+        ],
+        "decisions": [
+          {
+            "id": "r073",
+            "pinned": false,
+            "keepCall": 0.18,
+            "keepResult": 0.54,
+            "action": "keep"
+          },
+          {
+            "id": "r138",
+            "pinned": false,
+            "keepCall": 0.15,
+            "keepResult": 0.49,
+            "action": "keep"
+          },
+          {
+            "id": "r1fd",
+            "pinned": false,
+            "keepCall": 0.3,
+            "keepResult": 0.7,
+            "action": "keep"
+          },
+          {
+            "id": "r2c2",
+            "pinned": false,
+            "keepCall": 0.18,
+            "keepResult": 0.49,
+            "action": "keep"
+          },
+          {
+            "id": "r387",
+            "pinned": false,
+            "keepCall": 0.16,
+            "keepResult": 0.5,
+            "action": "keep"
+          },
+          {
+            "id": "r067",
+            "pinned": false,
+            "keepCall": 0.2,
+            "keepResult": 0.48,
+            "action": "keep"
+          },
+          {
+            "id": "r12c",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r1f1",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r2b6",
+            "pinned": true,
+            "action": "keep"
+          }
+        ]
+      },
+      {
+        "case": "ticket-zh-head",
+        "goldId": "r13d",
+        "directFact": true,
+        "snapshotFact": true,
+        "snapshotPages": 2,
+        "elapsedMs": 362,
+        "evidenceChars": 5849,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 2441,
+            "outputTokens": 220
+          }
+        ],
+        "decisions": [
+          {
+            "id": "r078",
+            "pinned": false,
+            "keepCall": 0.15,
+            "keepResult": 0.53,
+            "action": "keep"
+          },
+          {
+            "id": "r13d",
+            "pinned": false,
+            "keepCall": 0.89,
+            "keepResult": 0.86,
+            "action": "keep"
+          },
+          {
+            "id": "r202",
+            "pinned": false,
+            "keepCall": 0.13,
+            "keepResult": 0.47,
+            "action": "keep"
+          },
+          {
+            "id": "r2c7",
+            "pinned": false,
+            "keepCall": 0.15,
+            "keepResult": 0.48,
+            "action": "keep"
+          },
+          {
+            "id": "r38c",
+            "pinned": false,
+            "keepCall": 0.17,
+            "keepResult": 0.5,
+            "action": "keep"
+          },
+          {
+            "id": "r06c",
+            "pinned": false,
+            "keepCall": 0.18,
+            "keepResult": 0.5,
+            "action": "keep"
+          },
+          {
+            "id": "r131",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r1f6",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r2bb",
+            "pinned": true,
+            "action": "keep"
+          }
+        ]
+      },
+      {
+        "case": "ticket-zh-tail",
+        "goldId": "r221",
+        "directFact": true,
+        "snapshotFact": true,
+        "snapshotPages": 2,
+        "elapsedMs": 374,
+        "evidenceChars": 5848,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 2439,
+            "outputTokens": 220
+          }
+        ],
+        "decisions": [
+          {
+            "id": "r097",
+            "pinned": false,
+            "keepCall": 0.17,
+            "keepResult": 0.5,
+            "action": "keep"
+          },
+          {
+            "id": "r15c",
+            "pinned": false,
+            "keepCall": 0.15,
+            "keepResult": 0.47,
+            "action": "keep"
+          },
+          {
+            "id": "r221",
+            "pinned": false,
+            "keepCall": 0.89,
+            "keepResult": 0.84,
+            "action": "keep"
+          },
+          {
+            "id": "r2e6",
+            "pinned": false,
+            "keepCall": 0.18,
+            "keepResult": 0.49,
+            "action": "keep"
+          },
+          {
+            "id": "r3ab",
+            "pinned": false,
+            "keepCall": 0.18,
+            "keepResult": 0.47,
+            "action": "keep"
+          },
+          {
+            "id": "r08b",
+            "pinned": false,
+            "keepCall": 0.2,
+            "keepResult": 0.49,
+            "action": "keep"
+          },
+          {
+            "id": "r150",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r215",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r2da",
+            "pinned": true,
+            "action": "keep"
+          }
+        ]
+      },
+      {
+        "case": "ticket-zh-middle",
+        "goldId": "r305",
+        "directFact": false,
+        "snapshotFact": true,
+        "snapshotPages": 3,
+        "elapsedMs": 737,
+        "evidenceChars": 5848,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 2420,
+            "outputTokens": 220
+          }
+        ],
+        "decisions": [
+          {
+            "id": "r0b6",
+            "pinned": false,
+            "keepCall": 0.16,
+            "keepResult": 0.53,
+            "action": "keep"
+          },
+          {
+            "id": "r17b",
+            "pinned": false,
+            "keepCall": 0.16,
+            "keepResult": 0.49,
+            "action": "keep"
+          },
+          {
+            "id": "r240",
+            "pinned": false,
+            "keepCall": 0.15,
+            "keepResult": 0.5,
+            "action": "keep"
+          },
+          {
+            "id": "r305",
+            "pinned": false,
+            "keepCall": 0.18,
+            "keepResult": 0.68,
+            "action": "keep"
+          },
+          {
+            "id": "r3ca",
+            "pinned": false,
+            "keepCall": 0.16,
+            "keepResult": 0.48,
+            "action": "keep"
+          },
+          {
+            "id": "r0aa",
+            "pinned": false,
+            "keepCall": 0.18,
+            "keepResult": 0.51,
+            "action": "keep"
+          },
+          {
+            "id": "r16f",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r234",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r2f9",
+            "pinned": true,
+            "action": "keep"
+          }
+        ]
+      },
+      {
+        "case": "hotel-zh-head",
+        "goldId": "r245",
+        "directFact": true,
+        "snapshotFact": true,
+        "snapshotPages": 2,
+        "elapsedMs": 357,
+        "evidenceChars": 5849,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 2443,
+            "outputTokens": 220
+          }
+        ],
+        "decisions": [
+          {
+            "id": "r0bb",
+            "pinned": false,
+            "keepCall": 0.12,
+            "keepResult": 0.4,
+            "action": "keep"
+          },
+          {
+            "id": "r180",
+            "pinned": false,
+            "keepCall": 0.12,
+            "keepResult": 0.38,
+            "action": "keep"
+          },
+          {
+            "id": "r245",
+            "pinned": false,
+            "keepCall": 0.93,
+            "keepResult": 0.86,
+            "action": "keep"
+          },
+          {
+            "id": "r30a",
+            "pinned": false,
+            "keepCall": 0.14,
+            "keepResult": 0.43,
+            "action": "keep"
+          },
+          {
+            "id": "r3cf",
+            "pinned": false,
+            "keepCall": 0.15,
+            "keepResult": 0.43,
+            "action": "keep"
+          },
+          {
+            "id": "r0af",
+            "pinned": false,
+            "keepCall": 0.15,
+            "keepResult": 0.47,
+            "action": "keep"
+          },
+          {
+            "id": "r174",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r239",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r2fe",
+            "pinned": true,
+            "action": "keep"
+          }
+        ]
+      },
+      {
+        "case": "hotel-zh-tail",
+        "goldId": "r329",
+        "directFact": true,
+        "snapshotFact": true,
+        "snapshotPages": 2,
+        "elapsedMs": 323,
+        "evidenceChars": 5848,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 2449,
+            "outputTokens": 220
+          }
+        ],
+        "decisions": [
+          {
+            "id": "r0da",
+            "pinned": false,
+            "keepCall": 0.14,
+            "keepResult": 0.45,
+            "action": "keep"
+          },
+          {
+            "id": "r19f",
+            "pinned": false,
+            "keepCall": 0.14,
+            "keepResult": 0.39,
+            "action": "keep"
+          },
+          {
+            "id": "r264",
+            "pinned": false,
+            "keepCall": 0.16,
+            "keepResult": 0.43,
+            "action": "keep"
+          },
+          {
+            "id": "r329",
+            "pinned": false,
+            "keepCall": 0.92,
+            "keepResult": 0.85,
+            "action": "keep"
+          },
+          {
+            "id": "r009",
+            "pinned": false,
+            "keepCall": 0.17,
+            "keepResult": 0.43,
+            "action": "keep"
+          },
+          {
+            "id": "r0ce",
+            "pinned": false,
+            "keepCall": 0.16,
+            "keepResult": 0.43,
+            "action": "keep"
+          },
+          {
+            "id": "r193",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r258",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r31d",
+            "pinned": true,
+            "action": "keep"
+          }
+        ]
+      },
+      {
+        "case": "hotel-zh-middle",
+        "goldId": "r0f9",
+        "directFact": false,
+        "snapshotFact": true,
+        "snapshotPages": 3,
+        "elapsedMs": 335,
+        "evidenceChars": 5848,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 2428,
+            "outputTokens": 220
+          }
+        ],
+        "decisions": [
+          {
+            "id": "r0f9",
+            "pinned": false,
+            "keepCall": 0.23,
+            "keepResult": 0.72,
+            "action": "keep"
+          },
+          {
+            "id": "r1be",
+            "pinned": false,
+            "keepCall": 0.12,
+            "keepResult": 0.44,
+            "action": "keep"
+          },
+          {
+            "id": "r283",
+            "pinned": false,
+            "keepCall": 0.12,
+            "keepResult": 0.45,
+            "action": "keep"
+          },
+          {
+            "id": "r348",
+            "pinned": false,
+            "keepCall": 0.12,
+            "keepResult": 0.45,
+            "action": "keep"
+          },
+          {
+            "id": "r028",
+            "pinned": false,
+            "keepCall": 0.15,
+            "keepResult": 0.46,
+            "action": "keep"
+          },
+          {
+            "id": "r0ed",
+            "pinned": false,
+            "keepCall": 0.13,
+            "keepResult": 0.48,
+            "action": "keep"
+          },
+          {
+            "id": "r1b2",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r277",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r33c",
+            "pinned": true,
+            "action": "keep"
+          }
+        ]
+      }
+    ]
+  },
+  "live-calibration-after": {
+    "kind": "Prompt-only attempt before partial-preview guard; rejected because middle facts were lost",
+    "cases": 9,
+    "directFacts": 6,
+    "snapshotFacts": 7,
+    "goldSelectionRecall": 0.7777777777777778,
+    "nonGoldOldRetention": 0,
+    "nonGoldOldTotal": 45,
+    "rows": [
+      {
+        "case": "mario-en-head",
+        "goldId": "r035",
+        "directFact": true,
+        "snapshotFact": true,
+        "snapshotPages": 2,
+        "elapsedMs": 1460,
+        "evidenceChars": 3248,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 2705,
+            "outputTokens": 220
+          }
+        ],
+        "decisions": [
+          {
+            "id": "r035",
+            "pinned": false,
+            "keepCall": 0.95,
+            "keepResult": 0.92,
+            "action": "keep"
+          },
+          {
+            "id": "r0fa",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r1bf",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.08,
+            "action": "drop"
+          },
+          {
+            "id": "r284",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r349",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r029",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r0ee",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r1b3",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r278",
+            "pinned": true,
+            "action": "keep"
+          }
+        ]
+      },
+      {
+        "case": "mario-en-tail",
+        "goldId": "r119",
+        "directFact": true,
+        "snapshotFact": true,
+        "snapshotPages": 2,
+        "elapsedMs": 304,
+        "evidenceChars": 3247,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 2709,
+            "outputTokens": 220
+          }
+        ],
+        "decisions": [
+          {
+            "id": "r054",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r119",
+            "pinned": false,
+            "keepCall": 0.94,
+            "keepResult": 0.93,
+            "action": "keep"
+          },
+          {
+            "id": "r1de",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r2a3",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r368",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r048",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r10d",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r1d2",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r297",
+            "pinned": true,
+            "action": "keep"
+          }
+        ]
+      },
+      {
+        "case": "mario-en-middle",
+        "goldId": "r1fd",
+        "directFact": false,
+        "snapshotFact": true,
+        "snapshotPages": 3,
+        "elapsedMs": 801,
+        "evidenceChars": 3248,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 2699,
+            "outputTokens": 220
+          }
+        ],
+        "decisions": [
+          {
+            "id": "r073",
+            "pinned": false,
+            "keepCall": 0.08,
+            "keepResult": 0.08,
+            "action": "drop"
+          },
+          {
+            "id": "r138",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.09,
+            "action": "drop"
+          },
+          {
+            "id": "r1fd",
+            "pinned": false,
+            "keepCall": 0.29,
+            "keepResult": 0.48,
+            "action": "keep"
+          },
+          {
+            "id": "r2c2",
+            "pinned": false,
+            "keepCall": 0.08,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r387",
+            "pinned": false,
+            "keepCall": 0.08,
+            "keepResult": 0.08,
+            "action": "drop"
+          },
+          {
+            "id": "r067",
+            "pinned": false,
+            "keepCall": 0.09,
+            "keepResult": 0.08,
+            "action": "drop"
+          },
+          {
+            "id": "r12c",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r1f1",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r2b6",
+            "pinned": true,
+            "action": "keep"
+          }
+        ]
+      },
+      {
+        "case": "ticket-zh-head",
+        "goldId": "r13d",
+        "directFact": true,
+        "snapshotFact": true,
+        "snapshotPages": 2,
+        "elapsedMs": 1004,
+        "evidenceChars": 3249,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 2744,
+            "outputTokens": 220
+          }
+        ],
+        "decisions": [
+          {
+            "id": "r078",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r13d",
+            "pinned": false,
+            "keepCall": 0.91,
+            "keepResult": 0.91,
+            "action": "keep"
+          },
+          {
+            "id": "r202",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r2c7",
+            "pinned": false,
+            "keepCall": 0.08,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r38c",
+            "pinned": false,
+            "keepCall": 0.08,
+            "keepResult": 0.08,
+            "action": "drop"
+          },
+          {
+            "id": "r06c",
+            "pinned": false,
+            "keepCall": 0.08,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r131",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r1f6",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r2bb",
+            "pinned": true,
+            "action": "keep"
+          }
+        ]
+      },
+      {
+        "case": "ticket-zh-tail",
+        "goldId": "r221",
+        "directFact": true,
+        "snapshotFact": true,
+        "snapshotPages": 2,
+        "elapsedMs": 325,
+        "evidenceChars": 3248,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 2742,
+            "outputTokens": 220
+          }
+        ],
+        "decisions": [
+          {
+            "id": "r097",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r15c",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r221",
+            "pinned": false,
+            "keepCall": 0.9,
+            "keepResult": 0.91,
+            "action": "keep"
+          },
+          {
+            "id": "r2e6",
+            "pinned": false,
+            "keepCall": 0.08,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r3ab",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r08b",
+            "pinned": false,
+            "keepCall": 0.08,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r150",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r215",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r2da",
+            "pinned": true,
+            "action": "keep"
+          }
+        ]
+      },
+      {
+        "case": "ticket-zh-middle",
+        "goldId": "r305",
+        "directFact": false,
+        "snapshotFact": false,
+        "snapshotPages": 0,
+        "elapsedMs": 354,
+        "evidenceChars": 1936,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 2723,
+            "outputTokens": 220
+          }
+        ],
+        "decisions": [
+          {
+            "id": "r0b6",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r17b",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.08,
+            "action": "drop"
+          },
+          {
+            "id": "r240",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r305",
+            "pinned": false,
+            "keepCall": 0.13,
+            "keepResult": 0.31,
+            "action": "drop"
+          },
+          {
+            "id": "r3ca",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r0aa",
+            "pinned": false,
+            "keepCall": 0.08,
+            "keepResult": 0.06,
+            "action": "drop"
+          },
+          {
+            "id": "r16f",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r234",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r2f9",
+            "pinned": true,
+            "action": "keep"
+          }
+        ]
+      },
+      {
+        "case": "hotel-zh-head",
+        "goldId": "r245",
+        "directFact": true,
+        "snapshotFact": true,
+        "snapshotPages": 2,
+        "elapsedMs": 635,
+        "evidenceChars": 3249,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 2746,
+            "outputTokens": 220
+          }
+        ],
+        "decisions": [
+          {
+            "id": "r0bb",
+            "pinned": false,
+            "keepCall": 0.05,
+            "keepResult": 0.06,
+            "action": "drop"
+          },
+          {
+            "id": "r180",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.06,
+            "action": "drop"
+          },
+          {
+            "id": "r245",
+            "pinned": false,
+            "keepCall": 0.94,
+            "keepResult": 0.94,
+            "action": "keep"
+          },
+          {
+            "id": "r30a",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.06,
+            "action": "drop"
+          },
+          {
+            "id": "r3cf",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r0af",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.06,
+            "action": "drop"
+          },
+          {
+            "id": "r174",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r239",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r2fe",
+            "pinned": true,
+            "action": "keep"
+          }
+        ]
+      },
+      {
+        "case": "hotel-zh-tail",
+        "goldId": "r329",
+        "directFact": true,
+        "snapshotFact": true,
+        "snapshotPages": 2,
+        "elapsedMs": 330,
+        "evidenceChars": 3248,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 2752,
+            "outputTokens": 220
+          }
+        ],
+        "decisions": [
+          {
+            "id": "r0da",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r19f",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r264",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r329",
+            "pinned": false,
+            "keepCall": 0.93,
+            "keepResult": 0.93,
+            "action": "keep"
+          },
+          {
+            "id": "r009",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.06,
+            "action": "drop"
+          },
+          {
+            "id": "r0ce",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r193",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r258",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r31d",
+            "pinned": true,
+            "action": "keep"
+          }
+        ]
+      },
+      {
+        "case": "hotel-zh-middle",
+        "goldId": "r0f9",
+        "directFact": false,
+        "snapshotFact": false,
+        "snapshotPages": 0,
+        "elapsedMs": 491,
+        "evidenceChars": 1936,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 2731,
+            "outputTokens": 220
+          }
+        ],
+        "decisions": [
+          {
+            "id": "r0f9",
+            "pinned": false,
+            "keepCall": 0.2,
+            "keepResult": 0.34,
+            "action": "drop"
+          },
+          {
+            "id": "r1be",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.06,
+            "action": "drop"
+          },
+          {
+            "id": "r283",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.08,
+            "action": "drop"
+          },
+          {
+            "id": "r348",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r028",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.08,
+            "action": "drop"
+          },
+          {
+            "id": "r0ed",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r1b2",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r277",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r33c",
+            "pinned": true,
+            "action": "keep"
+          }
+        ]
+      }
+    ]
+  },
+  "live-calibration-final": {
+    "kind": "Final calibration with deterministic partial-preview retention",
+    "cases": 9,
+    "directFacts": 6,
+    "snapshotFacts": 9,
+    "goldSelectionRecall": 1,
+    "nonGoldOldRetention": 0,
+    "nonGoldOldTotal": 45,
+    "rows": [
+      {
+        "case": "mario-en-head",
+        "goldId": "r035",
+        "directFact": true,
+        "snapshotFact": true,
+        "snapshotPages": 2,
+        "elapsedMs": 995,
+        "evidenceChars": 3248,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 2705,
+            "outputTokens": 220
+          }
+        ],
+        "decisions": [
+          {
+            "id": "r035",
+            "pinned": false,
+            "keepCall": 0.94,
+            "keepResult": 0.91,
+            "action": "keep"
+          },
+          {
+            "id": "r0fa",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r1bf",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.08,
+            "action": "drop"
+          },
+          {
+            "id": "r284",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r349",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r029",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.06,
+            "action": "drop"
+          },
+          {
+            "id": "r0ee",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r1b3",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r278",
+            "pinned": true,
+            "action": "keep"
+          }
+        ]
+      },
+      {
+        "case": "mario-en-tail",
+        "goldId": "r119",
+        "directFact": true,
+        "snapshotFact": true,
+        "snapshotPages": 2,
+        "elapsedMs": 746,
+        "evidenceChars": 3247,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 2709,
+            "outputTokens": 220
+          }
+        ],
+        "decisions": [
+          {
+            "id": "r054",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r119",
+            "pinned": false,
+            "keepCall": 0.94,
+            "keepResult": 0.93,
+            "action": "keep"
+          },
+          {
+            "id": "r1de",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r2a3",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r368",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r048",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r10d",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r1d2",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r297",
+            "pinned": true,
+            "action": "keep"
+          }
+        ]
+      },
+      {
+        "case": "mario-en-middle",
+        "goldId": "r1fd",
+        "directFact": false,
+        "snapshotFact": true,
+        "snapshotPages": 3,
+        "elapsedMs": 526,
+        "evidenceChars": 3248,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 2699,
+            "outputTokens": 220
+          }
+        ],
+        "decisions": [
+          {
+            "id": "r073",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r138",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r1fd",
+            "pinned": false,
+            "keepCall": 0.24,
+            "keepResult": 0.4,
+            "action": "keep"
+          },
+          {
+            "id": "r2c2",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r387",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r067",
+            "pinned": false,
+            "keepCall": 0.08,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r12c",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r1f1",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r2b6",
+            "pinned": true,
+            "action": "keep"
+          }
+        ]
+      },
+      {
+        "case": "ticket-zh-head",
+        "goldId": "r13d",
+        "directFact": true,
+        "snapshotFact": true,
+        "snapshotPages": 2,
+        "elapsedMs": 306,
+        "evidenceChars": 3249,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 2744,
+            "outputTokens": 220
+          }
+        ],
+        "decisions": [
+          {
+            "id": "r078",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.06,
+            "action": "drop"
+          },
+          {
+            "id": "r13d",
+            "pinned": false,
+            "keepCall": 0.91,
+            "keepResult": 0.92,
+            "action": "keep"
+          },
+          {
+            "id": "r202",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.06,
+            "action": "drop"
+          },
+          {
+            "id": "r2c7",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r38c",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r06c",
+            "pinned": false,
+            "keepCall": 0.08,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r131",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r1f6",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r2bb",
+            "pinned": true,
+            "action": "keep"
+          }
+        ]
+      },
+      {
+        "case": "ticket-zh-tail",
+        "goldId": "r221",
+        "directFact": true,
+        "snapshotFact": true,
+        "snapshotPages": 2,
+        "elapsedMs": 305,
+        "evidenceChars": 3248,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 2742,
+            "outputTokens": 220
+          }
+        ],
+        "decisions": [
+          {
+            "id": "r097",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.06,
+            "action": "drop"
+          },
+          {
+            "id": "r15c",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.06,
+            "action": "drop"
+          },
+          {
+            "id": "r221",
+            "pinned": false,
+            "keepCall": 0.9,
+            "keepResult": 0.92,
+            "action": "keep"
+          },
+          {
+            "id": "r2e6",
+            "pinned": false,
+            "keepCall": 0.08,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r3ab",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.06,
+            "action": "drop"
+          },
+          {
+            "id": "r08b",
+            "pinned": false,
+            "keepCall": 0.08,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r150",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r215",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r2da",
+            "pinned": true,
+            "action": "keep"
+          }
+        ]
+      },
+      {
+        "case": "ticket-zh-middle",
+        "goldId": "r305",
+        "directFact": false,
+        "snapshotFact": true,
+        "snapshotPages": 3,
+        "elapsedMs": 357,
+        "evidenceChars": 3248,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 2723,
+            "outputTokens": 220
+          }
+        ],
+        "decisions": [
+          {
+            "id": "r0b6",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r17b",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.08,
+            "action": "drop"
+          },
+          {
+            "id": "r240",
+            "pinned": false,
+            "keepCall": 0.08,
+            "keepResult": 0.09,
+            "action": "drop"
+          },
+          {
+            "id": "r305",
+            "pinned": false,
+            "keepCall": 0.14,
+            "keepResult": 0.28,
+            "action": "keep"
+          },
+          {
+            "id": "r3ca",
+            "pinned": false,
+            "keepCall": 0.08,
+            "keepResult": 0.08,
+            "action": "drop"
+          },
+          {
+            "id": "r0aa",
+            "pinned": false,
+            "keepCall": 0.08,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r16f",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r234",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r2f9",
+            "pinned": true,
+            "action": "keep"
+          }
+        ]
+      },
+      {
+        "case": "hotel-zh-head",
+        "goldId": "r245",
+        "directFact": true,
+        "snapshotFact": true,
+        "snapshotPages": 2,
+        "elapsedMs": 763,
+        "evidenceChars": 3249,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 2746,
+            "outputTokens": 220
+          }
+        ],
+        "decisions": [
+          {
+            "id": "r0bb",
+            "pinned": false,
+            "keepCall": 0.05,
+            "keepResult": 0.06,
+            "action": "drop"
+          },
+          {
+            "id": "r180",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r245",
+            "pinned": false,
+            "keepCall": 0.93,
+            "keepResult": 0.94,
+            "action": "keep"
+          },
+          {
+            "id": "r30a",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.06,
+            "action": "drop"
+          },
+          {
+            "id": "r3cf",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.06,
+            "action": "drop"
+          },
+          {
+            "id": "r0af",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.06,
+            "action": "drop"
+          },
+          {
+            "id": "r174",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r239",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r2fe",
+            "pinned": true,
+            "action": "keep"
+          }
+        ]
+      },
+      {
+        "case": "hotel-zh-tail",
+        "goldId": "r329",
+        "directFact": true,
+        "snapshotFact": true,
+        "snapshotPages": 2,
+        "elapsedMs": 266,
+        "evidenceChars": 3248,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 2752,
+            "outputTokens": 220
+          }
+        ],
+        "decisions": [
+          {
+            "id": "r0da",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.06,
+            "action": "drop"
+          },
+          {
+            "id": "r19f",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r264",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.08,
+            "action": "drop"
+          },
+          {
+            "id": "r329",
+            "pinned": false,
+            "keepCall": 0.93,
+            "keepResult": 0.93,
+            "action": "keep"
+          },
+          {
+            "id": "r009",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.06,
+            "action": "drop"
+          },
+          {
+            "id": "r0ce",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.06,
+            "action": "drop"
+          },
+          {
+            "id": "r193",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r258",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r31d",
+            "pinned": true,
+            "action": "keep"
+          }
+        ]
+      },
+      {
+        "case": "hotel-zh-middle",
+        "goldId": "r0f9",
+        "directFact": false,
+        "snapshotFact": true,
+        "snapshotPages": 3,
+        "elapsedMs": 302,
+        "evidenceChars": 3248,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 2731,
+            "outputTokens": 220
+          }
+        ],
+        "decisions": [
+          {
+            "id": "r0f9",
+            "pinned": false,
+            "keepCall": 0.24,
+            "keepResult": 0.38,
+            "action": "keep"
+          },
+          {
+            "id": "r1be",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.06,
+            "action": "drop"
+          },
+          {
+            "id": "r283",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r348",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r028",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.08,
+            "action": "drop"
+          },
+          {
+            "id": "r0ed",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.07,
+            "action": "drop"
+          },
+          {
+            "id": "r1b2",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r277",
+            "pinned": true,
+            "action": "keep"
+          },
+          {
+            "id": "r33c",
+            "pinned": true,
+            "action": "keep"
+          }
+        ]
+      }
+    ]
+  },
+  "live-validation": {
+    "kind": "fresh synthetic validation; same generator, unseen tasks; not downstream quality",
+    "cases": 9,
+    "directFacts": 6,
+    "snapshotFacts": 9,
+    "goldRetentionRecall": 1,
+    "modelOnlyGoldRetentionRecall": 0.8888888888888888,
+    "nonGoldOldRetention": 0,
+    "nonGoldOldTotal": 45,
+    "rows": [
+      {
+        "case": "error-zh-head",
+        "goldId": "r035",
+        "directFact": true,
+        "snapshotFact": true,
+        "snapshotPages": 2,
+        "elapsedMs": 944,
+        "evidenceChars": 3249,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 2758,
+            "outputTokens": 220
+          }
+        ],
+        "decisions": [
+          {
+            "id": "r035",
+            "pinned": false,
+            "keepCall": 0.95,
+            "keepResult": 0.92,
+            "action": "keep",
+            "reason": "partial-preview"
+          },
+          {
+            "id": "r0fa",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.07,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r1bf",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.07,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r284",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.07,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r349",
+            "pinned": false,
+            "keepCall": 0.08,
+            "keepResult": 0.06,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r029",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.06,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r0ee",
+            "pinned": true,
+            "action": "keep",
+            "reason": "pinned"
+          },
+          {
+            "id": "r1b3",
+            "pinned": true,
+            "action": "keep",
+            "reason": "pinned"
+          },
+          {
+            "id": "r278",
+            "pinned": true,
+            "action": "keep",
+            "reason": "pinned"
+          }
+        ]
+      },
+      {
+        "case": "error-zh-tail",
+        "goldId": "r119",
+        "directFact": true,
+        "snapshotFact": true,
+        "snapshotPages": 2,
+        "elapsedMs": 303,
+        "evidenceChars": 3247,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 2761,
+            "outputTokens": 220
+          }
+        ],
+        "decisions": [
+          {
+            "id": "r054",
+            "pinned": false,
+            "keepCall": 0.08,
+            "keepResult": 0.07,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r119",
+            "pinned": false,
+            "keepCall": 0.94,
+            "keepResult": 0.93,
+            "action": "keep",
+            "reason": "partial-preview"
+          },
+          {
+            "id": "r1de",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.08,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r2a3",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.06,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r368",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.06,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r048",
+            "pinned": false,
+            "keepCall": 0.08,
+            "keepResult": 0.06,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r10d",
+            "pinned": true,
+            "action": "keep",
+            "reason": "pinned"
+          },
+          {
+            "id": "r1d2",
+            "pinned": true,
+            "action": "keep",
+            "reason": "pinned"
+          },
+          {
+            "id": "r297",
+            "pinned": true,
+            "action": "keep",
+            "reason": "pinned"
+          }
+        ]
+      },
+      {
+        "case": "error-zh-middle",
+        "goldId": "r1fd",
+        "directFact": false,
+        "snapshotFact": true,
+        "snapshotPages": 3,
+        "elapsedMs": 331,
+        "evidenceChars": 3248,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 2745,
+            "outputTokens": 220
+          }
+        ],
+        "decisions": [
+          {
+            "id": "r073",
+            "pinned": false,
+            "keepCall": 0.08,
+            "keepResult": 0.07,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r138",
+            "pinned": false,
+            "keepCall": 0.08,
+            "keepResult": 0.08,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r1fd",
+            "pinned": false,
+            "keepCall": 0.24,
+            "keepResult": 0.45,
+            "action": "keep",
+            "reason": "partial-preview"
+          },
+          {
+            "id": "r2c2",
+            "pinned": false,
+            "keepCall": 0.08,
+            "keepResult": 0.07,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r387",
+            "pinned": false,
+            "keepCall": 0.08,
+            "keepResult": 0.07,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r067",
+            "pinned": false,
+            "keepCall": 0.09,
+            "keepResult": 0.07,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r12c",
+            "pinned": true,
+            "action": "keep",
+            "reason": "pinned"
+          },
+          {
+            "id": "r1f1",
+            "pinned": true,
+            "action": "keep",
+            "reason": "pinned"
+          },
+          {
+            "id": "r2b6",
+            "pinned": true,
+            "action": "keep",
+            "reason": "pinned"
+          }
+        ]
+      },
+      {
+        "case": "refund-en-head",
+        "goldId": "r13d",
+        "directFact": true,
+        "snapshotFact": true,
+        "snapshotPages": 2,
+        "elapsedMs": 321,
+        "evidenceChars": 3248,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 2715,
+            "outputTokens": 220
+          }
+        ],
+        "decisions": [
+          {
+            "id": "r078",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.07,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r13d",
+            "pinned": false,
+            "keepCall": 0.95,
+            "keepResult": 0.93,
+            "action": "keep",
+            "reason": "partial-preview"
+          },
+          {
+            "id": "r202",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.06,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r2c7",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.06,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r38c",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.07,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r06c",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.07,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r131",
+            "pinned": true,
+            "action": "keep",
+            "reason": "pinned"
+          },
+          {
+            "id": "r1f6",
+            "pinned": true,
+            "action": "keep",
+            "reason": "pinned"
+          },
+          {
+            "id": "r2bb",
+            "pinned": true,
+            "action": "keep",
+            "reason": "pinned"
+          }
+        ]
+      },
+      {
+        "case": "refund-en-tail",
+        "goldId": "r221",
+        "directFact": true,
+        "snapshotFact": true,
+        "snapshotPages": 2,
+        "elapsedMs": 325,
+        "evidenceChars": 3247,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 2707,
+            "outputTokens": 220
+          }
+        ],
+        "decisions": [
+          {
+            "id": "r097",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.07,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r15c",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.07,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r221",
+            "pinned": false,
+            "keepCall": 0.95,
+            "keepResult": 0.94,
+            "action": "keep",
+            "reason": "partial-preview"
+          },
+          {
+            "id": "r2e6",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.06,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r3ab",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.07,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r08b",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.07,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r150",
+            "pinned": true,
+            "action": "keep",
+            "reason": "pinned"
+          },
+          {
+            "id": "r215",
+            "pinned": true,
+            "action": "keep",
+            "reason": "pinned"
+          },
+          {
+            "id": "r2da",
+            "pinned": true,
+            "action": "keep",
+            "reason": "pinned"
+          }
+        ]
+      },
+      {
+        "case": "refund-en-middle",
+        "goldId": "r305",
+        "directFact": false,
+        "snapshotFact": true,
+        "snapshotPages": 3,
+        "elapsedMs": 325,
+        "evidenceChars": 3248,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 2695,
+            "outputTokens": 220
+          }
+        ],
+        "decisions": [
+          {
+            "id": "r0b6",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.07,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r17b",
+            "pinned": false,
+            "keepCall": 0.06,
+            "keepResult": 0.08,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r240",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.08,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r305",
+            "pinned": false,
+            "keepCall": 0.12,
+            "keepResult": 0.24,
+            "action": "keep",
+            "reason": "partial-preview"
+          },
+          {
+            "id": "r3ca",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.07,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r0aa",
+            "pinned": false,
+            "keepCall": 0.08,
+            "keepResult": 0.07,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r16f",
+            "pinned": true,
+            "action": "keep",
+            "reason": "pinned"
+          },
+          {
+            "id": "r234",
+            "pinned": true,
+            "action": "keep",
+            "reason": "pinned"
+          },
+          {
+            "id": "r2f9",
+            "pinned": true,
+            "action": "keep",
+            "reason": "pinned"
+          }
+        ]
+      },
+      {
+        "case": "handoff-zh-head",
+        "goldId": "r245",
+        "directFact": true,
+        "snapshotFact": true,
+        "snapshotPages": 2,
+        "elapsedMs": 296,
+        "evidenceChars": 3249,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 2737,
+            "outputTokens": 220
+          }
+        ],
+        "decisions": [
+          {
+            "id": "r0bb",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.07,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r180",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.07,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r245",
+            "pinned": false,
+            "keepCall": 0.93,
+            "keepResult": 0.93,
+            "action": "keep",
+            "reason": "partial-preview"
+          },
+          {
+            "id": "r30a",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.07,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r3cf",
+            "pinned": false,
+            "keepCall": 0.08,
+            "keepResult": 0.07,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r0af",
+            "pinned": false,
+            "keepCall": 0.07,
+            "keepResult": 0.07,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r174",
+            "pinned": true,
+            "action": "keep",
+            "reason": "pinned"
+          },
+          {
+            "id": "r239",
+            "pinned": true,
+            "action": "keep",
+            "reason": "pinned"
+          },
+          {
+            "id": "r2fe",
+            "pinned": true,
+            "action": "keep",
+            "reason": "pinned"
+          }
+        ]
+      },
+      {
+        "case": "handoff-zh-tail",
+        "goldId": "r329",
+        "directFact": true,
+        "snapshotFact": true,
+        "snapshotPages": 2,
+        "elapsedMs": 463,
+        "evidenceChars": 3247,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 2741,
+            "outputTokens": 220
+          }
+        ],
+        "decisions": [
+          {
+            "id": "r0da",
+            "pinned": false,
+            "keepCall": 0.08,
+            "keepResult": 0.07,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r19f",
+            "pinned": false,
+            "keepCall": 0.08,
+            "keepResult": 0.07,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r264",
+            "pinned": false,
+            "keepCall": 0.09,
+            "keepResult": 0.09,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r329",
+            "pinned": false,
+            "keepCall": 0.94,
+            "keepResult": 0.92,
+            "action": "keep",
+            "reason": "partial-preview"
+          },
+          {
+            "id": "r009",
+            "pinned": false,
+            "keepCall": 0.08,
+            "keepResult": 0.06,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r0ce",
+            "pinned": false,
+            "keepCall": 0.08,
+            "keepResult": 0.07,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r193",
+            "pinned": true,
+            "action": "keep",
+            "reason": "pinned"
+          },
+          {
+            "id": "r258",
+            "pinned": true,
+            "action": "keep",
+            "reason": "pinned"
+          },
+          {
+            "id": "r31d",
+            "pinned": true,
+            "action": "keep",
+            "reason": "pinned"
+          }
+        ]
+      },
+      {
+        "case": "handoff-zh-middle",
+        "goldId": "r0f9",
+        "directFact": false,
+        "snapshotFact": true,
+        "snapshotPages": 3,
+        "elapsedMs": 340,
+        "evidenceChars": 3248,
+        "usage": [
+          {
+            "model": "jev-1.13.0",
+            "inputTokens": 2723,
+            "outputTokens": 220
+          }
+        ],
+        "decisions": [
+          {
+            "id": "r0f9",
+            "pinned": false,
+            "keepCall": 0.66,
+            "keepResult": 0.69,
+            "action": "keep",
+            "reason": "partial-preview"
+          },
+          {
+            "id": "r1be",
+            "pinned": false,
+            "keepCall": 0.11,
+            "keepResult": 0.08,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r283",
+            "pinned": false,
+            "keepCall": 0.1,
+            "keepResult": 0.11,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r348",
+            "pinned": false,
+            "keepCall": 0.1,
+            "keepResult": 0.11,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r028",
+            "pinned": false,
+            "keepCall": 0.12,
+            "keepResult": 0.11,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r0ed",
+            "pinned": false,
+            "keepCall": 0.11,
+            "keepResult": 0.1,
+            "action": "drop",
+            "reason": "jev"
+          },
+          {
+            "id": "r1b2",
+            "pinned": true,
+            "action": "keep",
+            "reason": "pinned"
+          },
+          {
+            "id": "r277",
+            "pinned": true,
+            "action": "keep",
+            "reason": "pinned"
+          },
+          {
+            "id": "r33c",
+            "pinned": true,
+            "action": "keep",
+            "reason": "pinned"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": [
+    "All records are synthetic; no user conversations or credentials included.",
+    "Calibration suites reuse fixtures and are not independent benchmarks.",
+    "Validation uses unseen tasks from the same generator; it is not a representative production sample.",
+    "Long partially visible records are retained by code regardless of model score; gold retention is a hybrid-system metric.",
+    "Snapshot recall uses an oracle reader selecting the gold record; it is not LLM retrieval performance."
+  ]
+}

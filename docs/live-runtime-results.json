@@ -1,0 +1,353 @@
+{
+  "codexVersion": "0.154.0",
+  "pluginCommits": [
+    "bc89833",
+    "c64b202"
+  ],
+  "notes": [
+    "Synthetic tools and records only; actual configured Codex model and TypeSafe API.",
+    "One sample per scenario/arm plus one hotel retest; not statistically powered.",
+    "Both arms answer all exact-checked fields. No observed synthetic action calls. This does not establish a quality gain.",
+    "Mario has successful API and hook statuses; restore-output instrumentation was added for ticket and hotel.",
+    "The hotel five-second timeout is included. The later ten-second-deadline pass does not establish reliability.",
+    "No snapshot-read calls were observed; native summaries already sufficed. Actual LLM page recovery remains unvalidated."
+  ],
+  "pairedResults": [
+    {
+      "mode": "native",
+      "case": "mario",
+      "model": "gpt-6-astra",
+      "realCodexModel": true,
+      "nativeCompaction": true,
+      "realJev": false,
+      "compactionMs": 8599,
+      "expectedMatches": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "allExactFacts": true,
+      "answer": "安全落点：173\n存档位置：world-4-tower\n最后一次错误码：E_PLATFORM_61\n模式：WALK",
+      "recordReads": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "sideEffects": [],
+      "probe": [],
+      "pluginHooks": [
+        {
+          "event": "preCompact",
+          "status": "completed",
+          "durationMs": 342
+        },
+        {
+          "event": "sessionStart",
+          "status": "completed",
+          "durationMs": 391
+        }
+      ]
+    },
+    {
+      "mode": "jev",
+      "case": "mario",
+      "model": "gpt-6-astra",
+      "realCodexModel": true,
+      "nativeCompaction": true,
+      "realJev": true,
+      "compactionMs": 10169,
+      "expectedMatches": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "allExactFacts": true,
+      "answer": "安全落点：173\n存档位置：world-4-tower\n最后一次错误码：E_PLATFORM_61\n模式：WALK",
+      "recordReads": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "sideEffects": [],
+      "probe": [
+        {
+          "kind": "jev",
+          "status": 200,
+          "elapsedMs": 1285,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 4057,
+            "output_tokens": 184
+          }
+        }
+      ],
+      "pluginHooks": [
+        {
+          "event": "preCompact",
+          "status": "completed",
+          "durationMs": 1768
+        },
+        {
+          "event": "sessionStart",
+          "status": "completed",
+          "durationMs": 414
+        }
+      ]
+    },
+    {
+      "mode": "native",
+      "case": "ticket",
+      "model": "gpt-6-astra",
+      "realCodexModel": true,
+      "nativeCompaction": true,
+      "realJev": false,
+      "compactionMs": 9191,
+      "expectedMatches": [
+        true,
+        true,
+        true
+      ],
+      "allExactFacts": true,
+      "answer": "工单号：T-835\n派单状态：已完成\n回执：rcpt-9M4\n负责人：林夏",
+      "recordReads": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "sideEffects": [],
+      "probe": [],
+      "pluginHooks": [
+        {
+          "event": "preCompact",
+          "status": "completed",
+          "durationMs": 411
+        },
+        {
+          "event": "sessionStart",
+          "status": "completed",
+          "durationMs": 368
+        }
+      ]
+    },
+    {
+      "mode": "jev",
+      "case": "ticket",
+      "model": "gpt-6-astra",
+      "realCodexModel": true,
+      "nativeCompaction": true,
+      "realJev": true,
+      "compactionMs": 9404,
+      "expectedMatches": [
+        true,
+        true,
+        true
+      ],
+      "allExactFacts": true,
+      "answer": "工单号：T-835\n派单状态：已完成\n回执：rcpt-9M4\n负责人：林夏",
+      "recordReads": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "sideEffects": [],
+      "probe": [
+        {
+          "kind": "jev",
+          "status": 200,
+          "elapsedMs": 883,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 4050,
+            "output_tokens": 184
+          }
+        },
+        {
+          "kind": "restore",
+          "evidenceChars": 5995
+        }
+      ],
+      "pluginHooks": [
+        {
+          "event": "preCompact",
+          "status": "completed",
+          "durationMs": 1347
+        },
+        {
+          "event": "sessionStart",
+          "status": "completed",
+          "durationMs": 390
+        }
+      ]
+    },
+    {
+      "mode": "native",
+      "case": "hotel",
+      "model": "gpt-6-astra",
+      "realCodexModel": true,
+      "nativeCompaction": true,
+      "realJev": false,
+      "compactionMs": 9868,
+      "expectedMatches": [
+        true,
+        true,
+        true
+      ],
+      "allExactFacts": true,
+      "answer": "订单号：H-63V\n支付回执：pay-2N8\n付款状态：已扣款\n早餐人数：1 人",
+      "recordReads": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "sideEffects": [],
+      "probe": [],
+      "pluginHooks": [
+        {
+          "event": "preCompact",
+          "status": "completed",
+          "durationMs": 418
+        },
+        {
+          "event": "sessionStart",
+          "status": "completed",
+          "durationMs": 361
+        }
+      ]
+    },
+    {
+      "mode": "jev",
+      "case": "hotel",
+      "model": "gpt-6-astra",
+      "realCodexModel": true,
+      "nativeCompaction": true,
+      "realJev": true,
+      "compactionMs": 16760,
+      "expectedMatches": [
+        true,
+        true,
+        true
+      ],
+      "allExactFacts": true,
+      "answer": "订单号：H-63V\n支付回执：pay-2N8\n付款状态：已扣款\n早餐人数：1",
+      "recordReads": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "sideEffects": [],
+      "probe": [
+        {
+          "kind": "jev",
+          "status": 200,
+          "elapsedMs": 4285,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 4056,
+            "output_tokens": 184
+          }
+        },
+        {
+          "kind": "restore",
+          "evidenceChars": 5995
+        }
+      ],
+      "pluginHooks": [
+        {
+          "event": "preCompact",
+          "status": "completed",
+          "durationMs": 4766
+        },
+        {
+          "event": "sessionStart",
+          "status": "completed",
+          "durationMs": 411
+        }
+      ]
+    }
+  ],
+  "failedTrials": [
+    {
+      "mode": "jev",
+      "case": "hotel",
+      "model": "gpt-6-astra",
+      "realCodexModel": true,
+      "nativeCompaction": true,
+      "realJev": true,
+      "compactionMs": 13566,
+      "expectedMatches": [
+        true,
+        true,
+        true
+      ],
+      "allExactFacts": true,
+      "answer": "订单号：H-63V\n支付回执：pay-2N8\n付款状态：已扣款\n早餐人数：1 人",
+      "recordReads": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "sideEffects": [],
+      "probe": [
+        {
+          "kind": "jev",
+          "status": 200,
+          "elapsedMs": 922,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 4044,
+            "output_tokens": 184
+          }
+        }
+      ],
+      "pluginHooks": [
+        {
+          "event": "preCompact",
+          "status": "completed",
+          "durationMs": 1473
+        },
+        {
+          "event": "sessionStart",
+          "status": "failed",
+          "durationMs": 5005
+        }
+      ]
+    }
+  ]
+}
