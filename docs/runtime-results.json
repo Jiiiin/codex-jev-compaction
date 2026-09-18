@@ -1,0 +1,240 @@
+{
+  "codexVersion": "0.154.0",
+  "platform": "macOS",
+  "note": "Local deterministic model and Jev fixtures. Not real model/API quality or latency. Keys were synthetic placeholders.",
+  "results": [
+    {
+      "mode": "manual",
+      "mockModel": true,
+      "mockJev": true,
+      "realCodexRuntime": true,
+      "requestCount": 11,
+      "evidenceInContinuation": true,
+      "pluginHooks": [
+        {
+          "event": "preCompact",
+          "status": "completed",
+          "durationMs": 596
+        },
+        {
+          "event": "sessionStart",
+          "status": "completed",
+          "durationMs": 463
+        }
+      ]
+    },
+    {
+      "mode": "auto",
+      "mockModel": true,
+      "mockJev": true,
+      "realCodexRuntime": true,
+      "requestCount": 11,
+      "evidenceInContinuation": true,
+      "evidenceInImmediateAutoContinuation": true,
+      "pluginHooks": [
+        {
+          "event": "preCompact",
+          "status": "completed",
+          "durationMs": 462
+        },
+        {
+          "event": "sessionStart",
+          "status": "completed",
+          "durationMs": 380
+        }
+      ],
+      "hookProbe": [
+        {
+          "hookStarted": true,
+          "enabled": "1",
+          "keyPresent": true
+        },
+        {
+          "event": "PreCompact",
+          "trigger": "auto",
+          "transcriptAvailable": true
+        },
+        {
+          "scoring": true,
+          "questions": 10
+        },
+        {
+          "hookStarted": true,
+          "enabled": "1",
+          "keyPresent": true
+        },
+        {
+          "event": "SessionStart",
+          "source": "compact",
+          "transcriptAvailable": true
+        }
+      ]
+    },
+    {
+      "mode": "paginated",
+      "mockModel": true,
+      "mockJev": true,
+      "realCodexRuntime": true,
+      "requestCount": 11,
+      "evidenceInContinuation": true,
+      "pluginHooks": [
+        {
+          "event": "preCompact",
+          "status": "completed",
+          "durationMs": 566
+        },
+        {
+          "event": "sessionStart",
+          "status": "completed",
+          "durationMs": 451
+        }
+      ],
+      "hookProbe": [
+        {
+          "hookStarted": true,
+          "enabled": "1",
+          "keyPresent": true
+        },
+        {
+          "event": "PreCompact",
+          "trigger": "manual",
+          "transcriptAvailable": true
+        },
+        {
+          "scoring": true,
+          "questions": 10
+        },
+        {
+          "hookStarted": true,
+          "enabled": "1",
+          "keyPresent": true
+        },
+        {
+          "event": "SessionStart",
+          "source": "compact",
+          "transcriptAvailable": true
+        }
+      ]
+    },
+    {
+      "mode": "failure",
+      "mockModel": true,
+      "mockJev": true,
+      "realCodexRuntime": true,
+      "requestCount": 11,
+      "evidenceInContinuation": false,
+      "pluginHooks": [
+        {
+          "event": "preCompact",
+          "status": "completed",
+          "durationMs": 521
+        },
+        {
+          "event": "sessionStart",
+          "status": "completed",
+          "durationMs": 388
+        }
+      ],
+      "hookProbe": [
+        {
+          "hookStarted": true,
+          "enabled": "1",
+          "keyPresent": true
+        },
+        {
+          "event": "PreCompact",
+          "trigger": "manual",
+          "transcriptAvailable": true
+        },
+        {
+          "hookStarted": true,
+          "enabled": "1",
+          "keyPresent": true
+        },
+        {
+          "event": "SessionStart",
+          "source": "compact",
+          "transcriptAvailable": true
+        }
+      ]
+    },
+    {
+      "mode": "repeat",
+      "staleEvidenceAfterSecondCompaction": false,
+      "mockModel": true,
+      "mockJev": true,
+      "realCodexRuntime": true,
+      "requestCount": 13,
+      "evidenceInContinuation": true,
+      "evidenceInImmediateAutoContinuation": null,
+      "pluginHooks": [
+        {
+          "event": "preCompact",
+          "status": "completed",
+          "durationMs": 475
+        },
+        {
+          "event": "sessionStart",
+          "status": "completed",
+          "durationMs": 369
+        },
+        {
+          "event": "preCompact",
+          "status": "completed",
+          "durationMs": 389
+        },
+        {
+          "event": "sessionStart",
+          "status": "completed",
+          "durationMs": 350
+        }
+      ],
+      "hookProbe": [
+        {
+          "hookStarted": true,
+          "enabled": "1",
+          "keyPresent": true
+        },
+        {
+          "event": "PreCompact",
+          "trigger": "manual",
+          "transcriptAvailable": true
+        },
+        {
+          "scoring": true,
+          "questions": 10
+        },
+        {
+          "hookStarted": true,
+          "enabled": "1",
+          "keyPresent": true
+        },
+        {
+          "event": "SessionStart",
+          "source": "compact",
+          "transcriptAvailable": true
+        },
+        {
+          "hookStarted": true,
+          "enabled": "1",
+          "keyPresent": true
+        },
+        {
+          "event": "PreCompact",
+          "trigger": "manual",
+          "transcriptAvailable": true
+        },
+        {
+          "hookStarted": true,
+          "enabled": "1",
+          "keyPresent": true
+        },
+        {
+          "event": "SessionStart",
+          "source": "compact",
+          "transcriptAvailable": true
+        }
+      ]
+    }
+  ]
+}

@@ -18,7 +18,7 @@ Codex 当前文档中的 `PreCompact` / `PostCompact` 没有替换会话消息�
 | CLI | 读取明确指定的导出文件，生成裁剪副本和决策报告 |
 | Offline demo | 固定假数据与假分数，不调用任何模型 |
 
-**发布状态：实验版，尚未提交官方市场。** 已验证 GitHub 安装、真实 Codex 钩子发现、离线/HTTP/进程/文件系统测试。真实 Jev API、实际压缩完整链路及任务效果对照仍待验证。[测试报告](docs/TEST-REPORT.md) · [提交草案](docs/SUBMISSION.md)。
+**发布状态：实验版，尚未提交官方市场。** 已验证 GitHub 安装、真实 Codex 钩子发现、离线/HTTP/进程/文件系统测试。真实 Codex 的手动/自动压缩与立即续跑已用本地模拟模型/Jev 验证；真实 Jev API 和真实任务效果对照仍待验证。[测试报告](docs/TEST-REPORT.md) · [提交草案](docs/SUBMISSION.md)。
 
 ## 快速体验（零依赖）
 
