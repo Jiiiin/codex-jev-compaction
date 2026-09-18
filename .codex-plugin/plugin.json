@@ -1,0 +1,22 @@
+{
+  "name": "codex-jev-compaction",
+  "version": "0.1.0",
+  "description": "Jev-selected evidence checkpoints around Codex native compaction; includes a non-destructive transcript export CLI.",
+  "author": {
+    "name": "Jiiiin"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Codex Jev Compaction",
+    "shortDescription": "Preserve selected evidence across compaction.",
+    "longDescription": "Opt-in Jev scoring with PreCompact checkpoints and SessionStart recovery. Supplements native compaction; never rewrites live transcripts.",
+    "developerName": "Jiiiin",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Create a Jev evidence checkpoint for an exported transcript."
+    ]
+  },
+  "repository": "https://github.com/Jiiiin/codex-jev-compaction",
+  "license": "MIT"
+}
