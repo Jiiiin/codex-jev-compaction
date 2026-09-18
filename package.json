@@ -4,6 +4,7 @@
   "scripts": {
     "test": "npm --prefix plugins/codex-jev-compaction run test",
     "demo": "npm --prefix plugins/codex-jev-compaction run demo",
-    "check": "npm --prefix plugins/codex-jev-compaction run check"
+    "check": "npm --prefix plugins/codex-jev-compaction run check",
+    "evaluate": "npm --prefix plugins/codex-jev-compaction run evaluate"
   }
 }

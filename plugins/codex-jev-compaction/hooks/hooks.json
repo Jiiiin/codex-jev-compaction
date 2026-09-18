@@ -1,7 +1,30 @@
 {
   "description": "Save Jev-selected evidence before compaction and restore it as quoted context. Does not replace native compaction.",
   "hooks": {
-    "PreCompact": [{"matcher": "^(manual|auto)$", "hooks": [{"type": "command", "command": "node \"${PLUGIN_ROOT}/scripts/hook.mjs\"", "timeout": 25}]}],
-    "SessionStart": [{"matcher": "^compact$", "hooks": [{"type": "command", "command": "node \"${PLUGIN_ROOT}/scripts/hook.mjs\"", "timeout": 5, "additionalContextLimit": 2500}]}]
+    "PreCompact": [
+      {
+        "matcher": "^(manual|auto)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${PLUGIN_ROOT}/scripts/hook.mjs\"",
+            "timeout": 25
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "^compact$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${PLUGIN_ROOT}/scripts/hook.mjs\"",
+            "timeout": 5,
+            "additionalContextLimit": 0
+          }
+        ]
+      }
+    ]
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "codex-jev-compaction",
-  "version": "0.1.0+codex.20260918062606",
+  "version": "0.1.0+codex.20260918063918",
   "description": "Jev-selected evidence checkpoints around Codex native compaction; includes a non-destructive transcript export CLI.",
   "author": {
     "name": "Jiiiin"
@@ -15,7 +15,12 @@
     "capabilities": [],
     "defaultPrompt": [
       "Create a Jev evidence checkpoint for an exported transcript."
-    ]
+    ],
+    "websiteURL": "https://github.com/Jiiiin/codex-jev-compaction",
+    "privacyPolicyURL": "https://github.com/Jiiiin/codex-jev-compaction/blob/main/PRIVACY.md",
+    "termsOfServiceURL": "https://github.com/Jiiiin/codex-jev-compaction/blob/main/TERMS.md",
+    "composerIcon": "./assets/icon.svg",
+    "logo": "./assets/icon.svg"
   },
   "repository": "https://github.com/Jiiiin/codex-jev-compaction",
   "license": "MIT"

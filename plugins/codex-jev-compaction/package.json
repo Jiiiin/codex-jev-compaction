@@ -4,7 +4,14 @@
   "description": "Jev-selected evidence checkpoints around Codex native compaction",
   "type": "module",
   "private": true,
-  "engines": {"node": ">=22"},
-  "scripts": {"test": "node --test", "demo": "node scripts/cli.mjs demo", "check": "node --check src/core.mjs && node --check scripts/hook.mjs && node --check scripts/cli.mjs"},
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node scripts/cli.mjs demo",
+    "check": "node --check src/core.mjs && node --check scripts/hook.mjs && node --check scripts/cli.mjs",
+    "evaluate": "node scripts/evaluate.mjs"
+  },
   "license": "MIT"
 }

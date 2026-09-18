@@ -92,7 +92,7 @@ test('hook creates private checkpoint, restores once, leaves transcript unchange
   const {dir,transcript,env,event}=await setupHook(); const before=await readFile(transcript,'utf8');
   await runHook(event,env,{ask:response(1)});
   const file=join(dir,'checkpoints',(await readdir(join(dir,'checkpoints')))[0]);
-  assert.equal((await stat(file)).mode & 0o777,0o600);
+  if (process.platform !== 'win32') assert.equal((await stat(file)).mode & 0o777,0o600);
   const restore={...event,hook_event_name:'SessionStart',source:'compact'};
   const output=await runHook(restore,env);assert.ok(output.hookSpecificOutput.additionalContext);
   assert.deepEqual(await runHook(restore,env),{});
