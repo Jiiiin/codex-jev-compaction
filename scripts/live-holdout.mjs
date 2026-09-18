@@ -9,7 +9,12 @@ import {saveEvidence, readEvidence} from '../plugins/codex-jev-compaction/src/ev
 if (process.argv[2] !== '--send-synthetic-to-typesafe') throw new Error('Explicit live synthetic evaluation flag required');
 const apiKey = await apiKeyFrom(process.env);
 if (!apiKey) throw new Error('Configure a private TypeSafe key file');
-const scenarios = [
+const validation = process.argv[3] === '--validation';
+const scenarios = validation ? [
+  {name:'error-zh',task:'核对之前失败的构建，保留第一次失败的错误码、提交号和日志回执。不要重新发布。',fact:'错误=BUILD_E73；提交=fa820c9；日志回执=log-71Q'},
+  {name:'refund-en',task:'Report the completed refund and its exact receipt. Never charge or refund again.',fact:'REFUND=completed; ORDER=O-248; RECEIPT=refund-93R'},
+  {name:'handoff-zh',task:'交接现场排障，保留最后的机器编号和临时读数；不要重启机器。',fact:'机器=vm-672；临时读数=72.4；采样回执=sample-3Z8'},
+] : [
   {name: 'mario-en', task: 'Continue Mario from the latest observed checkpoint. Preserve its exact safe landing coordinate.', fact: 'SAFE_LANDING_X=263; CHECKPOINT=world-5-bridge'},
   {name: 'ticket-zh', task: '跟进工单，不要重复已经完成的派单；必须保留准确的回执编号。', fact: '工单=T-719；派单=已完成；回执=rcpt-6V3'},
   {name: 'hotel-zh', task: '继续跟进已确认的酒店订单。保留订单和支付回执，不能重复预订或扣款。', fact: '订单=H-85P；状态=已确认；支付=已扣款；回执=pay-4A7'},
@@ -35,12 +40,13 @@ try {
    try {let offset=0;do {const page=await readEvidence(path,ids[target],{cwd:directory,offset});recovered+=page.text;pages++;offset=page.nextOffset;} while(offset!==null);} catch {}
    rows.push({case:s.name+'-'+position,goldId:ids[target],directFact:excerpt.includes(s.fact),snapshotFact:recovered.includes(s.fact),snapshotPages:pages,
     elapsedMs:Math.round(performance.now()-started),evidenceChars:excerpt.length,usage,
-    decisions:result.decisions.map(({id,pinned,keepCall,keepResult,action})=>({id,pinned,keepCall,keepResult,action}))});
+    decisions:result.decisions.map(({id,pinned,keepCall,keepResult,action,reason})=>({id,pinned,keepCall,keepResult,action,reason}))});
   } catch(error) {rows.push({case:s.name+'-'+position,failed:true,error:error.message});}
  }
- const summary={kind:'live blinded-ID synthetic holdout; not downstream task quality',cases:rows.length,
+ const summary={kind:validation?'fresh synthetic validation; same generator, unseen tasks; not downstream quality':'synthetic calibration; blinded IDs; not independent after prompt tuning',cases:rows.length,
   directFacts:rows.filter(r=>r.directFact).length,snapshotFacts:rows.filter(r=>r.snapshotFact).length,
-  goldSelectionRecall:rows.filter(r=>r.decisions?.some(d=>d.id===r.goldId&&d.action!=='drop')).length/rows.length,
+  goldRetentionRecall:rows.filter(r=>r.decisions?.some(d=>d.id===r.goldId&&d.action!=='drop')).length/rows.length,
+  modelOnlyGoldRetentionRecall:rows.filter(r=>r.decisions?.some(d=>d.id===r.goldId&&(d.keepCall>=0.35||d.keepResult>=0.35))).length/rows.length,
   nonGoldOldRetention:rows.flatMap(r=>(r.decisions??[]).filter(d=>d.id!==r.goldId&&!d.pinned)).filter(d=>d.action!=='drop').length,
   nonGoldOldTotal:rows.flatMap(r=>(r.decisions??[]).filter(d=>d.id!==r.goldId&&!d.pinned)).length,rows};
  console.log(JSON.stringify(summary,null,2));

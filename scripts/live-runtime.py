@@ -18,6 +18,12 @@ observer = artifacts / 'live-observer.mjs'
 observer.write_text('''import {appendFileSync} from 'node:fs';
 const record=x=>appendFileSync(process.env.JEV_LIVE_PROBE,JSON.stringify(x)+'\\n');
 if(process.argv[1]?.endsWith('/scripts/hook.mjs')) {
+ const write=process.stdout.write.bind(process.stdout);
+ process.stdout.write=(chunk,...rest)=>{
+  try {const context=JSON.parse(String(chunk)).hookSpecificOutput?.additionalContext;
+   if(context) record({kind:'restore',evidenceChars:context.length});} catch {}
+  return write(chunk,...rest);
+ };
  const original=globalThis.fetch;
  globalThis.fetch=async(...args)=>{
   const start=performance.now();const response=await original(...args);
@@ -130,6 +136,8 @@ try:
  print(json.dumps(report,indent=2,ensure_ascii=False),flush=True)
  if mode=='jev' and not any(x.get('kind')=='jev' and x.get('status')==200 for x in report['probe']):
   raise RuntimeError('No successful real Jev call observed; runtime result is not a live Jev pass')
+ if mode=='jev' and not any(x.get('kind')=='restore' for x in report['probe']):
+  raise RuntimeError('No evidence restoration observed')
  succeeded=True
 except Exception as e:
  print('Test failed:',type(e).__name__,str(e),flush=True)

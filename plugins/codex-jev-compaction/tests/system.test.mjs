@@ -99,12 +99,15 @@ test('checkpoint obeys tiny budgets and emits no empty header', async () => {
 });
 test('200 deterministic randomized decisions preserve text, unknown items and intact pairing', async () => {
   let seed = 931;
+  const actions=new Set();
   const random = () => ((seed = (seed * 1664525 + 1013904223) >>> 0) / 2 ** 32);
   for (let trial = 0; trial < 200; trial++) {
     const items = history(5 + Math.floor(random() * 20));
+    for(const item of items) if(typeof item.output==='string' && random()<0.65) item.output=item.output.slice(0,500);
     items.push({type: 'future_unknown', body: 'unchanged'});
     const original = JSON.stringify(items);
     const result = await compact(items, async (_s, q) => Object.fromEntries(Object.keys(q).map(k => [k, {noul: random()}])));
+    result.decisions.forEach(d=>actions.add(d.action));
     assert.equal(JSON.stringify(items), original);
     assert.deepEqual(result.items.filter(x => x.type === 'message'), items.filter(x => x.type === 'message'));
     assert.deepEqual(result.items.at(-1), items.at(-1));
@@ -113,6 +116,7 @@ test('200 deterministic randomized decisions preserve text, unknown items and in
     }
     for (const pinned of result.decisions.filter(x => x.pinned)) assert.ok(result.items.includes(items[pinned.result]));
   }
+  assert.deepEqual([...actions].sort(),['drop','keep','truncate']);
 });
 test('multiple concurrent restores inject once', async t => {
   const {env, event} = await setup(t);
